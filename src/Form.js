@@ -1,16 +1,12 @@
-import React from "react";
 
-function Form() {
+import React from 'react'
+import Main from "./Main";
+
+
+export default function TodoList({ todos, toggleTodo }) {
     return (
-        <div className="container-md mt-4 d-flex justify-content-center">
-            <form className="row" method="POST">
-                <input type="text" id="item" name="item"
-                       className=""/>
-                <input type="submit" id="submit" value="Submit Todo"
-                       className="btn btn-outline-danger ml-2"/>
-            </form>
-        </div>
-    );
-};
-
-export default Form;
+        todos.map(todo => {
+            return <Main key={todo.id} toggleTodo={toggleTodo} todo={todo} />
+        })
+    )
+}
