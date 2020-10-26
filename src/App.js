@@ -42,7 +42,7 @@ function App() {
     return (
 
         <>
-            <header className="container-md bg bg-warning text-info ">
+            <header className="container-md bg bg-warning text-info d-flex justify-content-center">
                 <div className="row pt-4 mt-4">
                     <h1>G.WebDev's Todo App</h1>
                 </div>
@@ -51,12 +51,12 @@ function App() {
             <div className="container-md ">
                 <div className="row pt-4 btn d-flex justify-content-center">
                     <input ref={todoNameRef} type="text"/>
-                    <button className="btn btn-outline-info ml-4"  onClick={handleAddTodo}>Add Todo</button>
+                    <button className="btn btn-outline-info ml-4" onClick={handleAddTodo}>Add Todo</button>
                     <button className="btn btn-outline-danger ml-4" onClick={handleClearTodos}>Clear Complete</button>
                 </div>
 
                 <div className="row bg-light d-flex justify-content-center">
-                        <Form todos={todos} toggleTodo={toggleTodo}/>
+                    <Form todos={todos} toggleTodo={toggleTodo}/>
                     <div>{todos.filter(todo => !todo.complete).length} left to do</div>
                 </div>
             </div>
