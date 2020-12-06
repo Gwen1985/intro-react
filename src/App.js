@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Form from "./Form";
-import uuidv4 from 'uuid/v4'
+import uuidv4 from 'uuid/v4';
+import './App.css';
 
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
@@ -39,6 +40,7 @@ function App() {
         setTodos(newTodos)
     }
 
+
     return (
 
         <>
@@ -55,17 +57,17 @@ function App() {
                     <button className="btn btn-outline-danger ml-4" onClick={handleClearTodos}>Clear Complete</button>
                 </div>
 
-                <div className="row bg-light d-flex justify-content-center">
+                <div className="row d-flex justify-content-center">
                     <Form todos={todos} toggleTodo={toggleTodo}/>
-                    <div>{todos.filter(todo => !todo.complete).length} left to do</div>
                 </div>
             </div>
 
 
-            <footer className="container-md bg bg-warning text-info">
+            <footer className="container-md bg bg-warning text-info pt-4 mt-3">
 
                 <div className="row d-flex justify-content-center">
                     <div className="">
+                        <div>{todos.filter(todo => !todo.complete).length} left to do</div>
                         <p className="text-info pt-2">G.WebDev</p>
                     </div>
                 </div>

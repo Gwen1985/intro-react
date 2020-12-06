@@ -1,16 +1,24 @@
 import React from 'react'
+import './Main.css';
 
 
-export default function Todo({todo, toggleTodo}) {
+function Todo({todo, toggleTodo}) {
     function handleTodoClick() {
         toggleTodo(todo.id)
     }
 
+// const Todo = (todo, toggleTodo) => {
+//     function handleTodoClick() {
+//       return  toggleTodo(todo.id)
+//     }
+
+
+
     return (
 
-        <div className="container-md d-flex justify-content-center pb-2 text-secondary border-info mt-2">
+        <div className="container-md d-flex justify-content-center " id="todoBox">
             <div className="row">
-                <label className="mt-2">
+                <label className="">
                     <input type="checkbox" checked={todo.complete} onChange={handleTodoClick}/>&nbsp;&nbsp;
                     {todo.name}
                 </label>
@@ -21,3 +29,5 @@ export default function Todo({todo, toggleTodo}) {
 
     )
 }
+
+export default Todo;
