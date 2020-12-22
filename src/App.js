@@ -1,8 +1,10 @@
 import React, {useState, useRef, useEffect} from 'react';
-import Form from "./Form";
-import uuidv4 from 'uuid/v4';
+import 'bootstrap/dist/css/bootstrap.css';
+// import uuid4 from 'uuid/v4';
 import './App.css';
-
+import Header from './Header';
+import Form from "./Form";
+import Footer from './Footer'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -30,7 +32,8 @@ function App() {
         const name = todoNameRef.current.value
         if (name === '') return
         setTodos(prevTodos => {
-            return [...prevTodos, {id: uuidv4(), name: name, complete: false}]
+            // eslint-disable-next-line no-undef
+            return [...prevTodos, {id: uuid4(), name: name, complete: false}]
         })
         todoNameRef.current.value = null
     }
@@ -43,12 +46,8 @@ function App() {
 
     return (
 
-        <>
-            <header className="container-md bg bg-warning text-info d-flex justify-content-center">
-                <div className="row pt-4 mt-4">
-                    <h1>G.WebDev's Todo App</h1>
-                </div>
-            </header>
+        <div className="app">
+            <Header/>
 
             <div className="container-md ">
                 <div className="row pt-4 btn d-flex justify-content-center">
@@ -61,19 +60,8 @@ function App() {
                     <Form todos={todos} toggleTodo={toggleTodo}/>
                 </div>
             </div>
-
-
-            <footer className="container-md bg bg-warning text-info pt-4 mt-3">
-
-                <div className="row d-flex justify-content-center">
-                    <div className="">
-                        <div>{todos.filter(todo => !todo.complete).length} left to do</div>
-                        <p className="text-info pt-2">G.WebDev</p>
-                    </div>
-                </div>
-
-            </footer>
-        </>
+            <Footer/>
+        </div>
     )
 }
 

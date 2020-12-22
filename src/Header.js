@@ -1,13 +1,17 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 
-function Header() {
+
+function header() {
     return (
-        <header className="container-md bg bg-warning text-info">
-            <div className="row d-flex justify-content-center mt-4">
-                <h1>G.WebDev's Todo App</h1>
+        <div className="header text-center">
+            <div className="row">
+                <div children="col-12">
+                    <h1>G.WebDev's Todo App</h1>
+                </div>
             </div>
-        </header>
+        </div>
     );
 }
 
-export default Header;
+export default header;

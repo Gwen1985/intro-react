@@ -10,12 +10,5 @@ import Main from "./Main";
     )
 }
 
-// const TodoList = (todos, toggleTodo) => {
-//     return (
-//         todos.map(todo => {
-//             return <Main key={todo.id} toggleTodo={toggleTodo} todo={todo} />
-//         })
-//     )
-// }
 
 export default TodoList;

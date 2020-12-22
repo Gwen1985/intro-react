@@ -1,17 +1,16 @@
 import React from "react";
+import App from "./App";
 
-function Footer() {
+
+function footer() {
     return (
-        <footer className="container-md bg bg-warning text-info">
-
-            <div className="row d-flex justify-content-center">
-                <div className="">
-                    <p className="text-info pt-2">G.WebDev</p>
-                </div>
+        <div className="row d-flex justify-content-center">
+            <div className="">
+                <div>{App().todos.filter(todo => !todo.complete).length} left to do</div>
+                <p className="text-info pt-2">G.WebDev</p>
             </div>
-
-        </footer>
+        </div>
     )
 }
 
-export default Footer;
+export default footer;
