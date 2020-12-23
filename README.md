@@ -1,6 +1,5 @@
-# Intro React.js
-
-## Todo app
+# React-intro
+ - Todo app
 
 ## Visit App
 - https://intro-react-gwen.netlify.app/
