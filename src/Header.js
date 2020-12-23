@@ -6,7 +6,7 @@ function header() {
     return (
         <div className="header text-center">
             <div className="row">
-                <div children="col-12">
+                <div className="col-12 text-info">
                     <h1>G.WebDev's Todo App</h1>
                 </div>
             </div>

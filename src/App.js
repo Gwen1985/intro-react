@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// import uuid4 from 'uuid/v4';
+import uuid4 from 'uuidv4';
 import './App.css';
 import Header from './Header';
 import Form from "./Form";
@@ -32,8 +32,7 @@ function App() {
         const name = todoNameRef.current.value
         if (name === '') return
         setTodos(prevTodos => {
-            // eslint-disable-next-line no-undef
-            return [...prevTodos, {id: uuid4(), name: name, complete: false}]
+            return [...prevTodos, {id: uuid4, name: name, complete: false}]
         })
         todoNameRef.current.value = null
     }
@@ -46,7 +45,7 @@ function App() {
 
     return (
 
-        <div className="app">
+        <div className="app text-center">
             <Header/>
 
             <div className="container-md ">
